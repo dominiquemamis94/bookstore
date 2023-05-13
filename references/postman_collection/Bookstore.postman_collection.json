@@ -1,0 +1,919 @@
+{
+	"info": {
+		"_postman_id": "a5b862c6-ad89-4a2b-a42e-482f2dad2610",
+		"name": "Bookstore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books"
+					]
+				},
+				"description": "Get Books"
+			},
+			"response": [
+				{
+					"name": "Get Books with URL Parameters",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/books?title=book&description=this&author=not",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "book"
+								},
+								{
+									"key": "description",
+									"value": "this"
+								},
+								{
+									"key": "author",
+									"value": "not"
+								},
+								{
+									"key": "price",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "293"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"125-YEZ0JhzURIPIVyRPzIeQV5zgmkM\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 13 May 2023 14:17:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"books\": [\n        {\n            \"title\": \"Sample Book Title\",\n            \"description\": \"This is the description\",\n            \"author\": \"not_test_user\",\n            \"cover_image\": \"cover_img.jpg\",\n            \"price\": 2.5\n        },\n        {\n            \"title\": \"Sample Book Title 3\",\n            \"description\": \"This is the third description\",\n            \"author\": \"not_test_user\",\n            \"cover_image\": \"cover_img.jpg\",\n            \"price\": 2.5\n        }\n    ]\n}"
+				},
+				{
+					"name": "Get All Books",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "834"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"342-9mrCjHlWUdinvb0NzK5CuEuBCAg\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 13 May 2023 14:17:56 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"books\": [\n        {\n            \"title\": \"Test Title\",\n            \"description\": \"Description for book 1\",\n            \"author\": \"not_test_user\",\n            \"cover_image\": \"test.png\",\n            \"price\": 5\n        },\n        {\n            \"title\": \"Book Title\",\n            \"description\": \"Description for test book number two\",\n            \"author\": \"test_user\",\n            \"cover_image\": \"book.png\",\n            \"price\": 9.99\n        },\n        {\n            \"title\": \"Sample Book Title\",\n            \"description\": \"This is the description\",\n            \"author\": \"not_test_user\",\n            \"cover_image\": \"cover_img.jpg\",\n            \"price\": 2.5\n        },\n        {\n            \"title\": \"Sample Book Title2 \",\n            \"description\": \"This is the second description\",\n            \"author\": \"test_user\",\n            \"cover_image\": \"cover_img.jpg\",\n            \"price\": 2.5\n        },\n        {\n            \"title\": \"Sample Book Title 3\",\n            \"description\": \"This is the third description\",\n            \"author\": \"not_test_user\",\n            \"cover_image\": \"cover_img.jpg\",\n            \"price\": 2.5\n        },\n        {\n            \"title\": \"Sample Book Title 4\",\n            \"description\": \"This is the fourth description\",\n            \"author\": \"test_user\",\n            \"cover_image\": \"cover_img.jpg\",\n            \"price\": 5.5\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Book By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/books/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"1"
+					]
+				},
+				"description": "Get Books"
+			},
+			"response": [
+				{
+					"name": "Get Book By Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/books/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "123"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"7b-HdGmLaNnHQyK1YPI4m+FTBuD+0U\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 13 May 2023 08:53:56 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"book\": {\n        \"id\": 1,\n        \"title\": \"Test Title\",\n        \"description\": \"Description for book 1\",\n        \"author\": 1,\n        \"cover_image\": \"test.png\",\n        \"price\": 5\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Create a Book",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJfRGFydGggVmFkZXJfIiwicGFzc3dvcmQiOiI1YmFhNjFlNGM5YjkzZjNmMDY4MjI1MGI2Y2Y4MzMxYjdlZTY4ZmQ4IiwiYXV0aG9yX3BzZXVkb255bSI6Il9EYXJ0aCBWYWRlcl8iLCJpYXQiOjE2ODM5OTM1OTAsImV4cCI6MTY4Mzk5NzE5MH0.g_HEowVy_gcEAg_HfiWzK7Wu4vf6PTMxax2SoM7skgg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Sample Book Title 7\",\n    \"description\": \"This is the 7th description\",\n    \"cover_image\": \"cover_img.jpg\",\n    \"price\": 5.50\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books"
+					]
+				},
+				"description": "Create Books"
+			},
+			"response": [
+				{
+					"name": "Create a Book - Authorized",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Sample Book Title 5\",\n    \"description\": \"This is the fifth description\",\n    \"author\": 1,\n    \"cover_image\": \"cover_img.jpg\",\n    \"price\": 5.50\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "41"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"29-wuwHNiY+ePw+KgciBIZSx0Zd/bQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 13 May 2023 15:00:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Successfully created a book\"\n}"
+				},
+				{
+					"name": "Create a Book - Unauthorized",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Sample Book Title 4\",\n    \"description\": \"This is the fourth description\",\n    \"author\": 3,\n    \"cover_image\": \"cover_img.jpg\",\n    \"price\": 5.50\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "59"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3b-u6UhIxaAlDZVM1bBtjcFmzqrrms\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 13 May 2023 14:59:41 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"message\": \"Error!Token was not provided.\"\n}"
+				},
+				{
+					"name": "Create a Book - Darth Vader",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Sample Book Title 7\",\n    \"description\": \"This is the 7th description\",\n    \"author\": 1,\n    \"cover_image\": \"cover_img.jpg\",\n    \"price\": 5.50\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "92"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5c-VoBdsPv/LzgOA0qeRzo1g95nEHM\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 13 May 2023 16:00:01 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"message\": \"Error! _Darth Vader_ is not allowed to publish his books here.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update a Book",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ1c2VyIiwicGFzc3dvcmQiOiI1YmFhNjFlNGM5YjkzZjNmMDY4MjI1MGI2Y2Y4MzMxYjdlZTY4ZmQ4IiwiYXV0aG9yX3BzZXVkb255bSI6Im5vdF90ZXN0X3VzZXIiLCJpYXQiOjE2ODM5ODk0NzEsImV4cCI6MTY4Mzk5MzA3MX0.NzLRnmcWML9hua9JcKn96y6Uj2o0GVQNWIBZqcO5Izg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"UPDATED Book Title\",\n    \"description\": \"This is the updated description\",\n    \"cover_image\": \"updated_cover_img.jpg\",\n    \"price\": 5.50\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/books/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"1"
+					]
+				},
+				"description": "Update Books"
+			},
+			"response": [
+				{
+					"name": "Update a Book - Not the Author",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"UPDATED Book Title\",\n    \"description\": \"This is the updated description\",\n    \"cover_image\": \"updated_cover_img.jpg\",\n    \"price\": 5.50\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/books/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books",
+								"2"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "73"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"49-SXP3O6D6I9C6mZ8G5zlAt7A2KbI\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 13 May 2023 15:19:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"message\": \"Error! You are not the author of this book.\"\n}"
+				},
+				{
+					"name": "Update a Book",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"UPDATED Book Title\",\n    \"description\": \"This is the updated description\",\n    \"cover_image\": \"updated_cover_img.jpg\",\n    \"price\": 5.50\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/books/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books",
+								"1"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "41"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"29-NLcmTU858g2iOU2Iflb7DRIX/HE\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 13 May 2023 15:50:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Successfully updated a book\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete a Book",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ1c2VyIiwicGFzc3dvcmQiOiI1YmFhNjFlNGM5YjkzZjNmMDY4MjI1MGI2Y2Y4MzMxYjdlZTY4ZmQ4IiwiYXV0aG9yX3BzZXVkb255bSI6Im5vdF90ZXN0X3VzZXIiLCJpYXQiOjE2ODM5OTMyMjksImV4cCI6MTY4Mzk5NjgyOX0.Di4Uz1nnwDY90xWinny-4mLLUNduo3VIiUeutMEddfY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/books/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"1"
+					]
+				},
+				"description": "Update Books"
+			},
+			"response": [
+				{
+					"name": "Delete a Book",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/books/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books",
+								"1"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "41"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"29-d0+ucv6GHLwBpt/Dv44DgIO4pXY\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 13 May 2023 15:56:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Successfully deleted a book\"\n}"
+				},
+				{
+					"name": "Delete a Book - Not the Owner",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/books/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books",
+								"2"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "73"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"49-SXP3O6D6I9C6mZ8G5zlAt7A2KbI\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 13 May 2023 15:53:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"message\": \"Error! You are not the author of this book.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"user\",\n    \"password\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				},
+				"description": "Login"
+			},
+			"response": [
+				{
+					"name": "Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"user\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "292"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"124-2BrKsIap+Wq++eCJfGuifjyNCEM\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 13 May 2023 14:48:54 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ1c2VyIiwicGFzc3dvcmQiOiI1YmFhNjFlNGM5YjkzZjNmMDY4MjI1MGI2Y2Y4MzMxYjdlZTY4ZmQ4IiwiYXV0aG9yX3BzZXVkb255bSI6Im5vdF90ZXN0X3VzZXIiLCJpYXQiOjE2ODM5ODkzMzQsImV4cCI6MTY4Mzk5MjkzNH0.i918Ex1vmGEDd21l0XvmklE6brypUDe9TyeUzeKw9uk\"\n}"
+				},
+				{
+					"name": "Invalid Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"userqeweqeq\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "25"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"19-Ufu/kgRaBDaM5KR81fI+2jHn1IM\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 13 May 2023 14:50:48 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Invalid Login\"\n}"
+				}
+			]
+		}
+	],
+	"protocolProfileBehavior": {}
+}
